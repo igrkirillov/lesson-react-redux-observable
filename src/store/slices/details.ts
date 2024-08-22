@@ -13,10 +13,10 @@ export const detailsSlice = createSlice({
     name: "details",
     initialState,
     selectors: {
-        servicesState: state => state
+        getDetailsState: state => state
     },
     reducers: (create) => ({
-        detailsRequest: create.reducer(state => {
+        detailsRequest: create.reducer<string>((state) => {
             state.loading = true;
             state.error = null;
         }),
@@ -24,7 +24,7 @@ export const detailsSlice = createSlice({
             state.loading = false;
             state.detailInfo = action.payload;
         }),
-        detailsError: create.reducer((state, action: PayloadAction<Error>) => {
+        detailsError: create.reducer((state, action: PayloadAction<string>) => {
             state.loading = false;
             state.error = action.payload;
         })
@@ -32,4 +32,4 @@ export const detailsSlice = createSlice({
 })
 
 export const {detailsRequest, detailsFulfilled, detailsError} = detailsSlice.actions;
-export const {servicesState} = detailsSlice.selectors;
+export const {getDetailsState} = detailsSlice.selectors;

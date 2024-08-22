@@ -1,7 +1,6 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  padding: 1em;
   text-align: center;
 }
 
@@ -12,7 +11,7 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em white);
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
@@ -47,4 +46,25 @@
 
 .list li {
   text-align: left;
+}
+
+.service-card {
+  text-align: left;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.logo div:nth-child(n + 2) {
+  margin-left: 10px;
 }

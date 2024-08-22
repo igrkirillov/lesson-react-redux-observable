@@ -3,6 +3,7 @@ import {servicesSlice} from "./slices/services";
 import {detailsSlice} from "./slices/details";
 import {combineEpics, createEpicMiddleware} from "redux-observable"
 import servicesRequestEpic from "../epics/services";
+import detailsRequestEpic from "../epics/details";
 
 // create the saga middleware
 const epicMiddleware = createEpicMiddleware<Action, Action>()
@@ -20,4 +21,4 @@ export type AppDispatch = AppStore["dispatch"]
 export type RootState = ReturnType<AppStore['getState']>
 
 // then run the epic
-epicMiddleware.run(combineEpics(servicesRequestEpic));
+epicMiddleware.run(combineEpics(servicesRequestEpic, detailsRequestEpic));

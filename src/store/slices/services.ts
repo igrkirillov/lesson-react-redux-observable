@@ -24,7 +24,7 @@ export const servicesSlice = createSlice({
             state.loading = false;
             state.services = action.payload;
         }),
-        servicesError: create.reducer((state, action: PayloadAction<Error>) => {
+        servicesError: create.reducer((state, action: PayloadAction<string>) => {
             state.loading = false;
             state.error = action.payload;
         })

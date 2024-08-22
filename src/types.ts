@@ -7,12 +7,14 @@ export type Service = {
 
 export type DetailInfo = {
     id: number,
-    name: string
+    name: string,
+    price: number,
+    content: string
 }
 
 type FetchingDataState = {
     loading: boolean,
-    error: Error | null,
+    error: string | null,
 }
 
 export type ServicesState  = FetchingDataState & {
